@@ -57,8 +57,10 @@ module.exports = (grunt) ->
       'patch-code',
     ]
 
-  tasks = tasks.concat [
-    # 'build-app',
-  ]
+  console.log('Building', process.env.JANKY_BRANCH, '@', process.env.TRAVIS_COMMIT);
+  if !!process.env.JANKY_BRANCH
+    tasks = tasks.concat [
+      'build-app',
+    ]
 
   grunt.registerTask('default', tasks)

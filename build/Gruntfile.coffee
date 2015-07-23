@@ -57,7 +57,7 @@ module.exports = (grunt) ->
       'patch-code',
     ]
 
-  console.log('--> Building', process.env.JANKY_BRANCH, '@', process.env.TRAVIS_COMMIT);
+  console.log('--> Building', process.env.JANKY_BRANCH, '@', process.env.JANKY_SHA1);
   if !!process.env.JANKY_BRANCH
     tasks = tasks.concat [
       'build-app',

@@ -7,5 +7,5 @@ module.exports = (grunt) ->
 
     process.chdir(grunt.config.get('workDir'))
 
-    cp.safeExec 'node script/bootstrap --verbose', ->
+    cp.safeExec 'npm config set loglevel silly --global && node script/bootstrap --verbose', ->
       done()

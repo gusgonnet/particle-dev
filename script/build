@@ -4,6 +4,8 @@ var path = require('path');
 
 var binSuffix = (process.platform === 'win32' ? '.cmd' : '');
 
+console.log('Building', process.env.JANKY_BRANCH, '@', process.env.TRAVIS_COMMIT);
+
 process.chdir('build');
 console.log('Bootstrapping build...');
 cp.safeSpawn('npm' + binSuffix, ['install'], function(){
